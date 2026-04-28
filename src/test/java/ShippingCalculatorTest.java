@@ -8,12 +8,12 @@ public class ShippingCalculatorTest {
 
     @Test
     void testStandard() {
-        assertEquals(15000.0, calc.calculate(5, "STANDARD"));
+        assertEquals(15000, calc.calculate(5, "STANDARD"));
     }
 
     @Test
     void testExpress() {
-        assertEquals(45000.0, calc.calculate(5, "EXPRESS"));
+        assertEquals(45000, calc.calculate(5, "EXPRESS"));
     }
 
     @Test
