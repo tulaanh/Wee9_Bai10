@@ -1,0 +1,21 @@
+Lỗi 1: Không timf thấy file pom
+Run mvn package
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.088 s
+[INFO] Finished at: 2026-04-28T09:14:09Z
+[INFO] ------------------------------------------------------------------------
+Error:  The goal you specified requires a project to execute but there is no POM in this directory (/home/runner/work/Wee9_Bai10/Wee9_Bai10). Please verify you invoked Maven from the correct directory. -> [Help 1]
+Error:
+Error:  To see the full stack trace of the errors, re-run Maven with the -e switch.
+Error:  Re-run Maven using the -X switch to enable full debug logging.
+Error:
+Error:  For more information about the errors and possible solutions, please read the following articles:
+Error:  [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+Error: Process completed with exit code 1.
+
+loi nam o file: .github/workflows/ci.yml
+bang chung log: Error:  The goal you specified requires a project to execute but there is no POM in this directory
+Nguyên nhân kỹ thuật: Trong file CI bạn chưa sử dụng Action checkout. Mặc định khi một Workflow chạy, nó đứng trên một máy ảo trống rỗng. Bạn phải dùng actions/checkout để nó kéo toàn bộ code từ GitHub Repository về máy ảo đó thì Maven mới thấy file pom.xml.
